@@ -11,7 +11,7 @@ import Cinema from './components/cinema.js';
 import Shop from './components/shop.js';
 import Detail from './components/detail.js';
 import Register from './components/register.js';
-import Test from './components/aaaaa.js';
+//import Test from './components/aaaaa.js';
 //引入动画
 import ReactANI from 'react-addons-css-transition-group';
 import { HashRouter as Router,  Route } from 'react-router-dom'; 
@@ -38,7 +38,7 @@ class Apps extends Component {
 			       <Route path="/shop" component={ Shop } />
 			       <Route path="/wode" component={WoDe}/>
 			       <Route path="/detail" component={Detail}/>
-			       <Route path="/test" component={Test}/>
+			       
 			       <Route path="/register" component={Register}/>
 					{this.props.shadown?<div id='shadown' onClick={this.props.showAside}></div>:''}
 					
