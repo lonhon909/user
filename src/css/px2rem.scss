@@ -1,0 +1,5 @@
+@function px2rem($px){
+	@return $px*320/$designWidth/10 + rem;
+}
+
+$designWidth: 750;
