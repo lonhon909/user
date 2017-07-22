@@ -50,8 +50,12 @@ class Commings extends React.Component{
 		
 		var that=this;
 		$.get('http://localhost:3001/comming',function(res){
-			that.props.getComming(res.data.films)
-			console.log(res.data.films)
+			if(res.status==0){
+				that.props.getComming(res.data.films);
+				console.log(res.data.films)
+			}
+			
+			
 		})
 		
 		

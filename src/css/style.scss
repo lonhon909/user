@@ -14,7 +14,20 @@ a{
 .app{
 	height: 100%;
 	width: 100%;
-	
+//	#go{
+//      animation:mygotop 0.5s;
+//  }
+//  @keyframes mygotop{
+//      from{ bottom:px2rem(-48); }
+//      to{ bottom: px2rem(10); }
+//  }
+//  #to{
+//      animation:mytop 0.5s;
+//  }
+//  @keyframes mytop{
+//      from{ bottom:px2rem(10); }
+//      to{ bottom: px2rem(-48); }
+//  }
 }
 
 .gotop{
@@ -26,27 +39,27 @@ a{
     right: px2rem(10);
     bottom: px2rem(10);
     text-align: center;
-    animation:mygotop 0.5s;
     i{
         font-size: px2rem(26);
         font-weight: normal;
         color: #FFF; 
         line-height: px2rem(48);
-        
     }
 }
-@keyframes mygotop{
-    from{ bottom:px2rem(-48); }
-    to{ bottom: px2rem(10); }
+.fadea-enter{
+    bottom: px2rem(-48);
 }
-
-//  animation:myfirst 0.5s;
-//  z-index: 88;
-//}
-//@keyframes myfirst{
-//  from {opacity:0;}
-//  to {opacity:0.3;}
-//}
+.fadea-enter-active{
+    bottom: px2rem(10);
+    transition:all  500ms ease;
+}
+.fadea-leave{
+    bottom: px2rem(10);
+}
+.fadea-leave-active{
+    bottom: px2rem(-48);
+    transition:all  500ms ease;
+}
 
 header{
 	height: px2rem(50);

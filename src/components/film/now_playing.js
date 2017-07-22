@@ -45,10 +45,13 @@ class NowPlayings extends React.Component{
 	
 	componentDidMount(){
 		
+		
 		var that=this;
 		$.get('http://localhost:3001/now_playing',function(res){
-			that.props.getNow_playing(res.data.films)
-//			console.log(res.data.films)
+			if(res.status==0){
+				that.props.getNow_playing(res.data.films)
+			}
+
 		})
 		
 	}

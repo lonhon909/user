@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import $ from 'jquery';
+
 //引入Header
 import Header from './components/header.js';
 import Aside from './components/aside.js';
@@ -43,9 +44,17 @@ class Apps extends Component {
 					{this.props.shadown?<div id='shadown' onClick={this.props.showAside}></div>:''}
 					
 					
-					{ this.props.isShowGoTop?<div  className='gotop' onClick={this.props.gotopooo}>
+					{/* this.props.isShowGoTop?<div  className='gotop' onClick={this.props.gotopooo}>
 						<i className='iconfont'>&#xe602;</i>
-					</div>:'' }
+					</div>:'' */}
+					
+					<ReactANI transitionName="fadea"
+						transitionEnterTimeout={500}
+						transitionLeaveTimeout={300}>
+			       		{this.props.isShowGoTop?<div  className='gotop' onClick={this.gotopooo.bind(this)}>
+							<i className='iconfont'>&#xe602;</i>
+						</div>:''}	
+			       </ReactANI>
 					
 			    </div>
 		    </Router>
@@ -54,23 +63,32 @@ class Apps extends Component {
 		
 	}
 	
+	gotopooo(){
+		
+		$('html,body').animate({scrollTop:0},500);
+	}
+	
 	componentDidMount(){
 		var onOff=false;
 		var that=this;
 		$(window).scroll(function(){
 			
 			if($(window).scrollTop()>=230){
+				
 				if(onOff==false){
+
 					onOff=true;	
 					that.props.showGoTop()
 					
 				}			
 			}else if($(window).scrollTop()<230){
 				if(onOff==true){
+
 					onOff=false;
 					that.props.showGoTop()
 				}
 			}
+
 		})
 		
 	}
@@ -94,16 +112,16 @@ var App=connect(
 				type:'SHOW_GOTOP',
 			}
 		},
-		gotopooo:function(){
-			
-			$('html,body').animate({scrollTop:0},500);
-
-			$(window).scrollTop(0);
-			return {
-				type:'GO_TOP',
-				gotop:true
-			}
-		}
+//		gotopooo:function(){
+//			
+//			$('html,body').animate({scrollTop:0},500);
+//
+//			$(window).scrollTop(0);
+//			return {
+//				type:'GO_TOP',
+//				gotop:true
+//			}
+//		}
 	}
 		
 )(Apps)

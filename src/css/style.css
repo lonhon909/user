@@ -21,19 +21,27 @@ a {
   position: fixed;
   right: 0.42667rem;
   bottom: 0.42667rem;
-  text-align: center;
-  animation: mygotop 0.5s; }
+  text-align: center; }
   .gotop i {
     font-size: 1.10933rem;
     font-weight: normal;
     color: #FFF;
     line-height: 2.048rem; }
 
-@keyframes mygotop {
-  from {
-    bottom: -2.048rem; }
-  to {
-    bottom: 0.42667rem; } }
+.fadea-enter {
+  bottom: -2.048rem; }
+
+.fadea-enter-active {
+  bottom: 0.42667rem;
+  transition: all  500ms ease; }
+
+.fadea-leave {
+  bottom: 0.42667rem; }
+
+.fadea-leave-active {
+  bottom: -2.048rem;
+  transition: all  500ms ease; }
+
 header {
   height: 2.13333rem;
   width: 100%;

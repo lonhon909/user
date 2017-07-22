@@ -77,8 +77,11 @@ class Cinemas extends React.Component {
 		this.props.changeTitle();
 		
 		var that=this;	
-		$.get('http://localhost:3001/cinema',function(res){			
-			that.props.getAllCinemas(res.data.cinemas);
+		$.get('http://localhost:3001/cinema',function(res){	
+			if(res.status==0){
+				that.props.getAllCinemas(res.data.cinemas);
+			}
+			
 		})
 	}
 }
